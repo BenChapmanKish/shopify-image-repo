@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Image Repository</title>
+    </head>
+
+    <body>
+        <a href="/">Main page</a>
+        <a href="/initialize">Initialize DB</a>
+
+        <table border = 1>
+            <thead>
+                <td>Name</td>
+                <td>Price</td>
+                <td>Stock</td>
+                <td>Image</td>
+                <td>Buy</td>
+            </thead>
+            
+            {% for product in products %}
+                <tr>
+                <td>{{product["name"]}}</td>
+                <td>{{product["price"]}}</td>
+                <td>{{product["stock"]}}</td>
+                <td><img src='{{product["src"]}}' /></td>
+                <td><a href='/buy/{{product["id"]}}'>BUY</button></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
